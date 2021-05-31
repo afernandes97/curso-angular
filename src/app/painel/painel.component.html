@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-sm-6">
+                <app-progresso [progresso]="progresso"></app-progresso>
+            </div>
+            <div class="col-sm-6">
+                <div class="d-flex justify-content-end"><app-tentativas [tentativas]="tentativas"></app-tentativas> </div>                               
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h6>{{instrucao}}</h6>
+                <p>{{rodadaFrase.fraseEng}}</p>
+                
+                <!-- eventBinding para capturar o texto digitado pelo usuario dentro do text area
+                atraves do evento input(sempre que temos interacao com o input do textarea
+                podemos recebelos e apartir de entao, trata-los)
+                -->
+                <div class="form-group">
+                    <!--$event para capturar o evento do text area-->
+                    <textarea class="form-control" row="3" (input)="atualizaResposta($event)" [value]="resposta" placeholder="Resposta"></textarea>                
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top:20px;">
+            <div class="col">
+                <div class="d-flex justify-content-end">
+                    <!-- assosiar o evento click do button com a funcao verificarResposta()-->
+                    <button type="button" class="btn btn-primary" (click)="verificarResposta()">Enviar Resposta</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

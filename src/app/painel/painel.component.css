@@ -1,0 +1,11 @@
+.jumbotron{
+    margin: 10px;
+    padding-bottom: 30px;
+}
+
+button{
+    background-color: aqua;
+    border: 1px solid aquamarine;
+    color:#02586b;
+    font-weight: bold;
+}
